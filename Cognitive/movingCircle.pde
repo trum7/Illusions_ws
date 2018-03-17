@@ -1,7 +1,5 @@
 float angleMove;
-float radius = 650;
 float change = 0;
-int back = 1;
 
 void movingCircle(){
   if(back ==1){

@@ -2,6 +2,8 @@ int illusions = 7;
 int current = 1;
 //toggle illusion activation
 boolean active = true;
+int back = 1;
+float radius = 650;
 
 void setup( ) {
     size( 800, 800 );
@@ -15,7 +17,6 @@ void draw( ) {
     case 7:
         scintillating( );
         break;
-        // implement from here. Don't forget to add break for each case
     case 1:
         background(255);
         shiftedGrid( );
@@ -31,9 +32,10 @@ void draw( ) {
         break;
     case 5:
         tunnel( );
-        break;
+        break;  
     case 6:
         movingCircle( );
+        
         break;
     }
     popStyle( );
@@ -43,7 +45,13 @@ void draw( ) {
 void keyReleased( ) {
     if ( key == ' ' )
     {
-        current = current < illusions ? current+1 : 1;
+        if (current < illusions)
+          current+=1;
+        else{
+          current = 1;
+          back = 1;
+          radius = 650;
+        }  
         active = true;
     }
     if ( key == 'a' )

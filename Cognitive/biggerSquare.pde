@@ -1,6 +1,6 @@
 float angle;
 float jitter;
-boolean value = 0;
+boolean value = true;
 
 void biggerSquare(){
 background(255);
@@ -16,7 +16,7 @@ rotate(c);
 fill(128,0,128);
 rect(0, 0, 200, 200);   
 
-if (value == 0){
+if (value){
   rotate(-c);
   fill(255,255,0);
   rect(100, 100, 150, 150); 
@@ -27,9 +27,9 @@ if (value == 0){
 }
 
 void mousePressed() {
-  if (value == 0) {
-    value = 1;
+  if (value) {
+    value = false;
   } else {
-    value = 0;
+    value = true;
   }
 }
